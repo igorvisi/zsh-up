@@ -1,24 +1,22 @@
-[![Build Status](https://travis-ci.org/Tarrasch/zsh-bd.png)](https://travis-ci.org/Tarrasch/zsh-bd)
+[![Build Status](https://travis-ci.org/igorvisi/zsh-up.png)](https://travis-ci.org/igorvisi/zsh-up)
 
-# zsh-bd
+# zsh-up
 
 Quickly go back to a specific parent directory instead of typing `cd ../../..` redundantly.
 
-Update August 2017: While there have not been commits lately, it's still fully functional.
 
 ---
 
-This is a reimplementation of
-[vigneshwaranr/bd](https://github.com/vigneshwaranr/bd) that utilizes the power
-of the zsh shell.
+
+From [Tarrash/zsh-bd](https://github.com/Tarrasch/zsh-bd)
 
 ## Install
 
-All you need to do is to source `bd.zsh`. Here's the manual installation
+All you need to do is to source `up.zsh`. Here's the manual installation
 
-    mkdir -p $HOME/.zsh/plugins/bd
-    curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > $HOME/.zsh/plugins/bd/bd.zsh
-    print -- "\n# zsh-bd\n. \$HOME/.zsh/plugins/bd/bd.zsh" >> $HOME/.zshrc
+    mkdir -p $HOME/.zsh/plugins/up
+    curl https://raw.githubusercontent.com/igorvisi/zsh-up/master/up.zsh > $HOME/.zsh/plugins/up/up.zsh
+    print -- "\n# zsh-up\n. \$HOME/.zsh/plugins/up/up.zsh" >> $HOME/.zshrc
 
 Restart your shell (or run `zsh`)
 
@@ -26,29 +24,23 @@ Restart your shell (or run `zsh`)
 
 If you prefer antigen over manual installation
 
-    antigen-bundle Tarrasch/zsh-bd
+    antigen-bundle igorvisi/zsh-up
 
 ## Usage
 
     $ mkdir -p a/b/c/d
     $ cd a/b/c/d
-    $ bd b
+    $ up b
     $ ls
     c
     $ cd c/d
-    $ bd 2
+    $ up 2
+    $ ls
+    c
+    $ cd c
+    $ up
     $ ls
     c
 
 Here's an animation also showing the completion functionality
-
-![Animated gif](animation.gif "Animation that shows auto completion")
-
-## Thanks
-
-Thanks to
-[@vigneshwaranr](https://github.com/vigneshwaranr)
-for inspiring me to do a zsh version.
-
-Thanks to [@voria](https://github.com/voria) for many useful
-patches! (see commit log)
+[![demo](https://asciinema.org/a/xm0kzVDtJL86zicUiHBP813C5.png)](https://asciinema.org/a/xm0kzVDtJL86zicUiHBP813C5?autoplay=1)
